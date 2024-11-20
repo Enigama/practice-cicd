@@ -17,13 +17,31 @@ jobs:
       # Runs a single command using the runners shell
       - name: Print Data
         run: echo `date`
-  #job2:
-    #name: Second job
-    #runs-on: window-latest
-  # job3:
-  #name: Third job
-  #runs-on: macos-latest
-  # job4:
-  #name: Forth job
-  #runs-on: ubuntu-latest
-  #needs: [job1, job2, job3]
+   job2:
+    name: Second job
+    runs-on: window-latest
+    steps:
+     # Checks-out your repository under $GITHUB_WORKSPACE, so your job can access it
+      - uses: actions/checkout@v4
+      # Runs a single command using the runners shell
+      - name: Print Data
+        run: echo `date`
+   job3:
+     name: Third job
+     runs-on: macos-latest
+     steps:
+     # Checks-out your repository under $GITHUB_WORKSPACE, so your job can access it
+      - uses: actions/checkout@v4
+      # Runs a single command using the runners shell
+      - name: Print Data
+        run: echo `date`
+   job4:
+     name: Forth job
+     runs-on: ubuntu-latest
+     needs: [job1, job2, job3]
+     steps:
+     # Checks-out your repository under $GITHUB_WORKSPACE, so your job can access it
+      - uses: actions/checkout@v4
+      # Runs a single command using the runners shell
+      - name: Print Data
+        run: echo `date`
